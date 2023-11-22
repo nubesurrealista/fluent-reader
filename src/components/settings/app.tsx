@@ -35,6 +35,7 @@ type AppTabProps = {
 }
 
 type AppTabState = {
+    doubleClickStatus: boolean
     pacStatus: boolean
     pacUrl: string
     themeSettings: ThemeSettings
@@ -47,6 +48,7 @@ class AppTab extends React.Component<AppTabProps, AppTabState> {
     constructor(props) {
         super(props)
         this.state = {
+            doubleClickStatus: window.settings.getDoubleClickStatus(),
             pacStatus: window.settings.getProxyStatus(),
             pacUrl: window.settings.getProxy(),
             themeSettings: getThemeSettings(),
@@ -170,6 +172,13 @@ class AppTab extends React.Component<AppTabProps, AppTabState> {
         })
     }
 
+    toggleDoubleClickStatus = () => {
+        window.settings.toggleDoubleClickStatus()
+        this.setState({
+            doubleClickStatus: window.settings.getDoubleClickStatus(),
+        })
+    }
+
     handleInputChange = event => {
         const name: string = event.target.name
         // @ts-ignore
@@ -287,6 +296,21 @@ class AppTab extends React.Component<AppTabProps, AppTabState> {
                     </span>
                 </form>
             )}
+
+            <Stack horizontal verticalAlign="baseline">
+                <Stack.Item grow>
+                    <Label>{intl.get("app.enableDoubleClick")}</Label>
+                </Stack.Item>
+                <Stack.Item>
+                    <Toggle
+                        checked={this.state.doubleClickStatus}
+                        onChange={this.toggleDoubleClickStatus}
+                    />
+                </Stack.Item>
+            </Stack>
+            <span className="settings-hint up">
+                {intl.get("app.doubleClickHint")}
+            </span>
 
             <Label>{intl.get("app.cleanup")}</Label>
             <Stack horizontal>
