@@ -1,6 +1,6 @@
 appId: me.hyliu.fluentreader
 productName: Fluent Reader
-copyright: Copyright © 2020 Haoyuan Liu
+copyright: Copyright © 2025 Nube
 files:
     - "./dist/**/*"
     - "!./dist/fontlist"
