@@ -18,6 +18,7 @@
     "confirmMarkAll": "¿Desea realmente marcar todos los artículos en esta página como leídos?",
     "confirm": "Confirmar",
     "cancel": "Cancelar",
+    "default": "Predeterminado",
     "time": {
         "now": "ahora",
         "m": "m",
@@ -25,12 +26,16 @@
         "d": "d",
         "minute": "{m, plural, =1 {# minuto} other {# minutos}}",
         "hour": "{h, plural, =1 {# hora} other {# horas}}",
-        "day": "{d, plural, =1 {# día} other {# días}}"
+        "day": "{d, plural, =1 {# día} other {# días}}",
+        "week": "{w, plural, =1 {# semana} other {# semanas}}"
     },
     "log": {
         "empty": "Sin notificaciones",
         "fetchFailure": "Falló al cargar fuente \"{name}\".",
-        "fetchSuccess": "Recuperado exitosamente {count, plural, =1 {# artículo} other {# artículos}}."
+        "fetchSuccess": "Recuperado exitosamente {count, plural, =1 {# artículo} other {# artículos}}.",
+        "networkError": "Se ha producido un error de red.",
+        "parseError": "Se ha producido un error al analizar el feed XML.",
+        "syncFailure": "Error al sincronizar con el servicio"
     },
     "nav": {
         "menu": "Menú",
@@ -47,16 +52,30 @@
         "subscriptions": "Suscripciones"
     },
     "article": {
+        "error": "Error al cargar el artículo.",
+        "reload": "¿Recargar?",
         "empty": "Sin artículos",
         "untitled": "(sin título)",
         "hide": "Ocultar artículo",
-        "unhide": "Mostar artículo",
+        "unhide": "Mostrar artículo",
         "markRead": "Marcar como leído",
         "markUnread": "Marcar como no leído",
+        "markAbove": "Marcar arriba como leído",
+        "markBelow": "Marcar abajo como leído",
         "star": "Destacar",
         "unstar": "Quitar destacado",
         "fontSize": "Tamaño de la fuente",
-        "loadWebpage": "Cargar página web"
+        "translate": "Traducir artículo",
+        "showOriginal": "Mostrar original",
+        "loadWebpage": "Cargar página web",
+        "loadFull": "Cargar contenido completo",
+        "notify": "Notificar si se recupera en segundo plano",
+        "dontNotify": "No notificar",
+        "textDir": "Dirección del texto",
+        "LTR": "Izquierda a derecha",
+        "RTL": "Derecha a izquierda",
+        "Vertical": "Vertical",
+        "font": "Fuente"
     },
     "context": {
         "share": "Compartir",
@@ -75,7 +94,21 @@
         "starredOnly": "Solo destacados",
         "fullSearch": "Buscar en todo el texto",
         "showHidden": "Mostrar artículos ocultos",
-        "manageSources": "Gestionar fuentes"
+        "manageSources": "Gestionar fuentes",
+        "saveImageAs": "Guardar imagen como …",
+        "copyImage": "Copiar imagen",
+        "copyImageURL": "Copiar enlace de la imagen",
+        "caseSensitive": "Sensible a mayúsculas",
+        "showCover": "Mostrar portada",
+        "showSnippet": "Mostrar fragmento",
+        "fadeRead": "Atenuar artículos leídos"
+    },
+    "searchEngine": {
+        "name": "Motor de búsqueda",
+        "google": "Google",
+        "bing": "Bing",
+        "baidu": "Baidu",
+        "duckduckgo": "DuckDuckGo"
     },
     "settings": {
         "writeError": "Se produjo un error al escribir el archivo.",
@@ -85,6 +118,7 @@
         "sources": "Fuentes",
         "grouping": "Agrupamiento",
         "rules": "Reglas",
+        "service": "Servicio",
         "app": "Preferencias",
         "about": "Acerca",
         "version": "Versión",
@@ -93,11 +127,14 @@
         "feedback": "Reacciones"
     },
     "sources": {
+        "serviceWarning": "Las fuentes importadas o agregadas aquí no se sincronizarán con tu servicio.",
+        "serviceManaged": "Esta fuente está gestionada por tu servicio.",
         "untitled": "Fuente",
         "errorAdd": "Se ha producido un error al agregar la fuente.",
         "errorParse": "Se produjo un error al analizar el archivo OPML.",
         "errorParseHint": "Por favor asegúrese que el archivo no está corrupto y codificado en formato UTF-8.",
         "errorImport": "Error en la importación {count, plural, =1 {# fuente} other {# fuentes}}.",
+        "exist": "Esta fuente ya existe.",
         "opmlFile": "Archivo OPML",
         "name": "Nombre de la fuente",
         "editName": "Modificar nombre",
@@ -111,12 +148,15 @@
         "rssText": "RSS texto completo",
         "loadWebpage": "Cargar página web",
         "inputUrl": "Ingresar dirección URL",
+        "badIcon": "Icono no válido",
         "badUrl": "URL no válida",
-        "deleteWarning": "Se eliminarán la fuente y todos los artículos guardados..",
+        "deleteWarning": "Se eliminarán la fuente y todos los artículos guardados.",
         "selected": "Fuente seleccionada",
-        "selectedMulti": "Múltiples fuentes seleccionadas"
+        "selectedMulti": "Múltiples fuentes seleccionadas",
+        "hidden": "Ocultar en \"todos los artículos\""
     },
     "groups": {
+        "exist": "Este grupo ya existe.",
         "type": "Tipo",
         "group": "Grupo",
         "source": "Fuente",
@@ -135,6 +175,8 @@
         "groupHint": "Doble clic sobre un grupo para modificar las fuentes. Arrastrar y soltar para reordenar."
     },
     "rules": {
+        "intro": "Marca artículos automáticamente o envía notificaciones con expresiones regulares.",
+        "help": "Más información",
         "source": "Fuente",
         "selectSource": "Seleccionar una fuente",
         "new": "Nueva regla",
@@ -143,6 +185,7 @@
         "title": "Título",
         "content": "Contenido",
         "fullSearch": "Título o contenido",
+        "creator": "Autor",
         "match": "coincidencias",
         "notMatch": "no coincide",
         "regex": "Expresión regular",
@@ -151,6 +194,26 @@
         "selectAction": "Seleccionar acciones",
         "hint": "Las reglas se aplicarán en orden. Arrastrar y soltar para reordenar.",
         "test": "Probar reglas"
+    },
+    "service": {
+        "intro": "Sincroniza entre dispositivos con servicios RSS.",
+        "select": "Seleccionar un servicio",
+        "suggest": "Sugerir un nuevo servicio",
+        "overwriteWarning": "Las fuentes locales se eliminarán si existen en el servicio.",
+        "groupsWarning": "Los grupos no se sincronizan automáticamente con el servicio.",
+        "rateLimitWarning": "Para evitar límites de tasa, necesitas crear tu propia API Key.",
+        "removeAd": "Eliminar publicidad",
+        "endpoint": "Endpoint",
+        "username": "Nombre de usuario",
+        "password": "Contraseña",
+        "unchanged": "Sin cambios",
+        "fetchLimit": "Límite de sincronización",
+        "fetchLimitNum": "{count} artículos más recientes",
+        "importGroups": "Importar grupos",
+        "failure": "No se puede conectar al servicio",
+        "failureHint": "Por favor, verifica la configuración del servicio o el estado de la red.",
+        "fetchUnlimited": "Ilimitado (no recomendado)",
+        "exportToLite": "Exportar a Fluent Reader Lite"
     },
     "app": {
         "cleanup": "Limpiar",
@@ -175,6 +238,10 @@
         "badUrl": "URL no válida",
         "pac": "Dirección PAC",
         "setPac": "Establecer PAC",
-        "pacHint": "Para proxies de tipo Socks proxies, se recomienda que PAC devuelva \"SOCKS5\" respecto del DNS del proxy. Desactivar el proxy requiere reiniciar."
+        "pacHint": "Para proxies de tipo Socks proxies, se recomienda que PAC devuelva \"SOCKS5\" respecto del DNS del proxy. Desactivar el proxy requiere reiniciar.",
+        "fetchInterval": "Intervalo de recuperación automática",
+        "feedDelay": "Retraso del feed",
+        "never": "Nunca",
+        "nodelay": "Sin retraso"
     }
 }
