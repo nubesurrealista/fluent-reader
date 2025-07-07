@@ -13,7 +13,7 @@ This is just a fork of Fluent Reader with some improvements of my own (mostly tr
 
 My changes:
 
-- Update spanish strings, change release tag.
+- Update spanish strings, change release tag, Added startpage as search engine
 
 ---
 
