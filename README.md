@@ -7,6 +7,7 @@ This is just a fork of Fluent Reader with some improvements of my own (mostly tr
 - [Add feed delay feature](https://github.com/yang991178/fluent-reader/pull/725)
 - [Package updates to fix some vulns](https://github.com/yang991178/fluent-reader/pull/733)
 - [Add sanity fix for null titles when fetching](https://github.com/yang991178/fluent-reader/pull/655)
+- [Add Feature: Enable Double-Click to Open Links in Built-in Browser](https://github.com/yang991178/fluent-reader/pull/619)
 
 ---
 
