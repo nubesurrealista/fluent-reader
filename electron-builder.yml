@@ -1,6 +1,6 @@
 appId: nube.fluentreader
 productName: Fluent Reader
-copyright: Copyright © 2025 Nube
+copyright: Copyright © 2025 Nube · Based on Fluent Reader by Haoyuan Liu
 files:
     - "./dist/**/*"
     - "!./dist/fontlist"

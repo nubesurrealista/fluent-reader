@@ -12,7 +12,7 @@ class AboutTab extends React.Component {
                     {intl.get("settings.version")} {window.utils.getVersion()}
                 </small>
                 <p className="settings-hint">
-                    Copyright © 2025 Nube. All rights reserved.
+                    © 2025 Nube. Fork of Fluent Reader by Haoyuan Liu. Licensed under the BSD 3-Clause License.
                 </p>
                 <Stack
                     horizontal

@@ -1,7 +1,7 @@
 appId: Nube.FluentReader
 buildVersion: 30
 productName: Fluent Reader
-copyright: Copyright © 2025 Nube
+copyright: Copyright © 2025 Nube · Based on Fluent Reader by Haoyuan Liu
 files:
     - "./dist/**/*"
     - "!./dist/fonts.vbs"
