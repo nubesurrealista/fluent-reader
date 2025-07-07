@@ -1,4 +1,4 @@
-appId: me.hyliu.fluentreader
+appId: nube.fluentreader
 productName: Fluent Reader
 copyright: Copyright © 2025 Nube
 files:
@@ -69,5 +69,5 @@ linux:
         - AppImage
     icon: build/icons
     category: Utility
-    desktop:
-        StartupWMClass: fluent-reader
+    startupWMClass: fluent-reader
+    desktop: {}
