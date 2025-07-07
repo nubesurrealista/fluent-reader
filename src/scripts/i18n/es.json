@@ -239,6 +239,8 @@
         "pac": "Dirección PAC",
         "setPac": "Establecer PAC",
         "pacHint": "Para proxies de tipo Socks proxies, se recomienda que PAC devuelva \"SOCKS5\" respecto del DNS del proxy. Desactivar el proxy requiere reiniciar.",
+        "enableDoubleClick": "Abrir en el navegador integrado con doble clic",
+        "doubleClickHint": "Activar esto puede introducir un retraso de 200 milisegundos para los clics simples.",
         "fetchInterval": "Intervalo de recuperación automática",
         "feedDelay": "Retraso del feed",
         "never": "Nunca",
