@@ -12,7 +12,7 @@ class AboutTab extends React.Component {
                     {intl.get("settings.version")} {window.utils.getVersion()}
                 </small>
                 <p className="settings-hint">
-                    Copyright © 2020 Haoyuan Liu. All rights reserved.
+                    Copyright © 2025 Nube. All rights reserved.
                 </p>
                 <Stack
                     horizontal
@@ -22,7 +22,7 @@ class AboutTab extends React.Component {
                         <Link
                             onClick={() =>
                                 window.utils.openExternal(
-                                    "https://github.com/yang991178/fluent-reader/wiki/Support#keyboard-shortcuts"
+                                    "https://github.com/nubesurrealista/fluent-reader/wiki/Support#keyboard-shortcuts"
                                 )
                             }>
                             {intl.get("settings.shortcuts")}
@@ -32,7 +32,7 @@ class AboutTab extends React.Component {
                         <Link
                             onClick={() =>
                                 window.utils.openExternal(
-                                    "https://github.com/yang991178/fluent-reader"
+                                    "https://github.com/nubesurrealista/fluent-reader"
                                 )
                             }>
                             {intl.get("settings.openSource")}
@@ -42,7 +42,7 @@ class AboutTab extends React.Component {
                         <Link
                             onClick={() =>
                                 window.utils.openExternal(
-                                    "https://github.com/yang991178/fluent-reader/issues"
+                                    "https://github.com/nubesurrealista/fluent-reader/issues"
                                 )
                             }>
                             {intl.get("settings.feedback")}
