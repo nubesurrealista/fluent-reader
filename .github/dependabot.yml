@@ -9,15 +9,6 @@ updates:
       - "dependencies"
       - "dependabot"
 
-  - package-ecosystem: "yarn"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    open-pull-requests-limit: 5
-    labels:
-      - "dependencies"
-      - "dependabot"
-
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
