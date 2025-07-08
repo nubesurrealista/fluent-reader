@@ -44,7 +44,7 @@
     "redux": "^4.0.5",
     "redux-devtools": "^3.5.0",
     "redux-thunk": "^2.3.0",
-    "reselect": "^4.0.0",
+    "reselect": "^5.1.1",
     "rss-parser": "^3.13.0",
     "ts-loader": "^7.0.4",
     "typescript": "^5.8.2",
