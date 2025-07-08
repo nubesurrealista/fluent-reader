@@ -32,6 +32,7 @@ type SourcesTabProps = {
     sids: number[]
     acknowledgeSIDs: () => void
     addSource: (url: string) => void
+	updateSourceUrl: (source: RSSSource, url: string) => void
     updateSourceName: (source: RSSSource, name: string) => void
     updateSourceIcon: (source: RSSSource, iconUrl: string) => Promise<void>
     updateSourceOpenTarget: (
@@ -67,6 +68,7 @@ class SourcesTab extends React.Component<SourcesTabProps, SourcesTabState> {
         this.state = {
             newUrl: "",
             newSourceName: "",
+			newSourceIcon: "",
             selectedSource: null,
             selectedSources: null,
         }
@@ -80,6 +82,7 @@ class SourcesTab extends React.Component<SourcesTabProps, SourcesTabState> {
                 this.setState({
                     selectedSource: count === 1 ? sources[0] : null,
                     selectedSources: count > 1 ? sources : null,
+					newUrl: count === 1 ? sources[0].url : "",
                     newSourceName: count === 1 ? sources[0].name : "",
                     newSourceIcon: count === 1 ? sources[0].iconurl || "" : "",
                     sourceEditOption: EditDropdownKeys.Name,
@@ -177,6 +180,12 @@ class SourcesTab extends React.Component<SourcesTabProps, SourcesTabState> {
             text: intl.get("openExternal"),
         },
     ]
+	
+	updateSourceUrl = () => {
+        let newUrl = this.state.newUrl.trim()
+        this.props.updateSourceUrl(this.state.selectedSource, newUrl)
+        this.setState({selectedSource: {...this.state.selectedSource, url: newUrl} as RSSSource})
+    }
 
     updateSourceName = () => {
         let newName = this.state.newSourceName.trim()
@@ -193,7 +202,7 @@ class SourcesTab extends React.Component<SourcesTabProps, SourcesTabState> {
         let newIcon = this.state.newSourceIcon.trim()
         this.props.updateSourceIcon(this.state.selectedSource, newIcon)
         this.setState({
-            selectedSource: { ...this.state.selectedSource, iconurl: newIcon },
+            selectedSource: { ...this.state.selectedSource, iconurl: newIcon } as RSSSource,
         })
     }
 
@@ -375,18 +384,19 @@ class SourcesTab extends React.Component<SourcesTabProps, SourcesTabState> {
                             <>
                                 <Stack.Item grow>
                                     <TextField
-                                        disabled
-                                        value={this.state.selectedSource.url}
+                                        onGetErrorMessage={v => urlTest(v.trim()) ? "" : intl.get("sources.badUrl")} 
+										validateOnLoad={false}
+										placeholder={intl.get("sources.inputUrl")}
+										value={this.state.newUrl}
+										name="newUrl"
+										onChange={this.handleInputChange}
                                     />
                                 </Stack.Item>
                                 <Stack.Item>
                                     <DefaultButton
-                                        onClick={() =>
-                                            window.utils.writeClipboard(
-                                                this.state.selectedSource.url
-                                            )
-                                        }
-                                        text={intl.get("context.copy")}
+                                        disabled={this.state.newUrl.trim().length == 0}
+										onClick={this.updateSourceUrl}
+										text={intl.get("edit")}
                                     />
                                 </Stack.Item>
                             </>
