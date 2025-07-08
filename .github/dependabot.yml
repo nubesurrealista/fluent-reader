@@ -1,6 +1,15 @@
 version: 2
 updates:
-  - package-ecosystem: "npm_and_yarn"
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "dependabot"
+
+  - package-ecosystem: "yarn"
     directory: "/"
     schedule:
       interval: "daily"
@@ -12,4 +21,4 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "daily"
