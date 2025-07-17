@@ -8,6 +8,7 @@ This is just a fork of Fluent Reader with some improvements of my own (mostly tr
 - [Package updates to fix some vulns](https://github.com/yang991178/fluent-reader/pull/733)
 - [Add sanity fix for null titles when fetching](https://github.com/yang991178/fluent-reader/pull/655)
 - [Add Feature: Enable Double-Click to Open Links in Built-in Browser](https://github.com/yang991178/fluent-reader/pull/619)
+- [feat: Source URL editable](https://github.com/Tjerbor/fluent-reader/commit/502a807f76e1d2d4d1f68014b7a233f6c0c193da)
 
 ---
 
