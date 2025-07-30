@@ -1,3 +1,9 @@
+# Development moved to: https://github.com/FluentFlame/fluent-flame-reader
+
+### This fork is no longer maintained because the focus is now on Fluent-Flame, a more serious fork where I am also involved. So, if you're reading this, come to look at our code and contribute yours if you want to help.
+
+## Old readme:
+
 This is just a fork of Fluent Reader with some improvements of my own (mostly translations), commits from the main repository that are not yet in the release build, and interesting commits from the community that I wanted to merge. There are no binaries; this is for personal use only. However, you can build it if you like; the instructions are the same as in [the original repository](https://github.com/yang991178/fluent-reader?tab=readme-ov-file#build-from-source). So far, the following community commits are included:
 
 - [feat: Implements web page translation](https://github.com/RichardSouzza/fluent-reader/commit/4fa295731870a5ef7ac2a45baee1b98b96f1a3a6)
